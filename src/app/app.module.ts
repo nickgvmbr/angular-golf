@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 import { NewGameComponent } from './components/new-game/new-game.component';
 import { GameComponent } from './components/game/game.component';
 
+import { MatFormFieldModule, MatSelectModule, MatButtonModule } from '@angular/material';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +21,10 @@ import { GameComponent } from './components/game/game.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

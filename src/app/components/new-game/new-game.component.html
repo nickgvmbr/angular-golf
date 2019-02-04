@@ -1,3 +1,33 @@
-<p>
-  new-game works!
-</p>
+<div class='container'>
+  <div class='card'>
+
+    <h1>New game</h1>
+
+    <!-- tee -->
+
+    <mat-form-field>
+      <mat-select name='tee' placeholder='Pick a tee' required>
+        <mat-option *ngFor='let tee of tees$; index as i' [value]='i'>
+          {{ tee | titlecase }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    <!-- players -->
+
+    <mat-form-field>
+      <mat-select name='players' placeholder='Players' required>
+        <mat-option *ngFor='let i of [1, 2, 3, 4]' [value]='i'>
+          {{ i }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- submit -->
+
+    <div class='actions'>
+      <button mat-flat-button color='primary'>Play</button>
+    </div>
+
+  </div>
+</div>

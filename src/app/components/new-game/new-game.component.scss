@@ -1,0 +1,30 @@
+.container {
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.card {
+  width: 360px;
+  padding: 32px;
+  box-sizing: border-box;
+
+  border: 1px solid #dadce0 {
+    radius: 8px;
+
+  }
+
+  mat-form-field:first-of-type {
+    width: 100%;
+  
+  }
+
+  .actions {
+    margin-top: 32px;
+
+  }
+
+}
