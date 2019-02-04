@@ -3,31 +3,45 @@
 
     <h1>New game</h1>
 
-    <!-- tee -->
+    <form (ngSubmit)='submit()' #empForm='ngForm'>
 
-    <mat-form-field>
-      <mat-select name='tee' placeholder='Pick a tee' required>
-        <mat-option *ngFor='let tee of tees$; index as i' [value]='i'>
-          {{ tee | titlecase }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-    
-    <!-- players -->
+      <!-- tee -->
 
-    <mat-form-field>
-      <mat-select name='players' placeholder='Players' required>
-        <mat-option *ngFor='let i of [1, 2, 3, 4]' [value]='i'>
-          {{ i }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+      <mat-form-field>
+        <mat-select name='tee'
+                    [(ngModel)]='newGame.tee'
+                    placeholder='Pick a tee'
+                    required>
+          <mat-option *ngFor='let tee of tees$; index as i' [value]='i'>
+            {{ tee | titlecase }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+      <!-- players -->
 
-    <!-- submit -->
+      <mat-form-field>
+        <mat-select name='players'
+                    [(ngModel)]='newGame.players'
+                    placeholder='Players'
+                    required>
+          <mat-option *ngFor='let i of [1, 2, 3, 4]' [value]='i'>
+            {{ i }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
-    <div class='actions'>
-      <button mat-flat-button color='primary'>Play</button>
-    </div>
+      <!-- submit -->
+
+      <div class='actions'>
+        <button mat-flat-button
+                color='primary'
+                [disabled]='empForm.invalid'>
+          Play
+        </button>
+      </div>
+
+    </form>
 
   </div>
 </div>
