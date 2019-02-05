@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { MatSnackBar } from '@angular/material';
 
-import { NewGame } from '../new-game/new-game';
+import { NewGame } from '../../models/new-game';
 import { Scores } from './scores';
 
 @Component({

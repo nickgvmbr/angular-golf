@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from '../../services/api.service';
 
-import { NewGame } from './new-game';
+import { NewGame } from '../../models/new-game';
 
 @Component({
   selector: 'app-new-game',
