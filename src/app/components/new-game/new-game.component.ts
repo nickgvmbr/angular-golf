@@ -30,6 +30,7 @@ export class NewGameComponent implements OnInit {
 
   submit() {
     console.log('submitted', this.newGame.tee, this.newGame.players);
+    sessionStorage.setItem('game', JSON.stringify(this.newGame));
     this.router.navigate(['/game']);
   }
 
