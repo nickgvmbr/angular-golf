@@ -1,3 +1,63 @@
-<p>
-  game works!
-</p>
+<ng-container *ngIf='game'>
+
+  <table>
+    <thead>
+
+      <!-- header row -->
+
+      <tr>
+        <th>Holes</th>
+        <th *ngFor='let hole of holes$; index as i'>{{ i + 1 }}</th>
+        <th>In</th>
+        <th>Out</th>
+        <th>Total</th>
+      </tr>
+
+    </thead>
+    <tbody>
+
+      <!-- course data -->
+
+        <tr>
+          <th>Par</th>
+          <td *ngFor='let hole of holes$'>{{ hole.par }}</td>
+          <td></td>
+          <td></td>
+          <td>{{ parTotal$ }}</td>
+        </tr>
+        <tr>
+          <th>Yards</th>
+          <td *ngFor='let hole of holes$'>{{ hole.yards }}</td>
+          <td></td>
+          <td></td>
+          <td>{{ yardsTotal$ }}</td>
+        </tr>
+        <tr>
+          <th>Hcp</th>
+          <td *ngFor='let hole of holes$'>{{ hole.hcp }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+
+      <!-- player rows -->
+
+      <tr *ngFor='let p of range(game.players)'>
+        <th>
+          <input type='text' [(ngModel)]='scores[p].name'>
+        </th>
+
+        <td *ngFor='let h of holes$; index as i'>
+          <input type='number' [(ngModel)]='scores[p].scores[i]'>
+        </td>
+        <td></td>
+        <td></td>
+        <td>{{ getTotal(scores[p].scores) }}</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <button (click)='log()'>Get scores data</button>
+
+</ng-container>
