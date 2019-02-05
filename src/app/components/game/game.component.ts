@@ -3,7 +3,7 @@ import { ApiService } from 'src/app/services/api.service';
 import { MatSnackBar } from '@angular/material';
 
 import { NewGame } from '../../models/new-game';
-import { Scores } from './scores';
+import { Scores } from '../../models/scores';
 
 @Component({
   selector: 'app-game',
