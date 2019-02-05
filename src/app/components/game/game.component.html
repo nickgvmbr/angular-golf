@@ -50,8 +50,8 @@
         <td *ngFor='let h of holes$; index as i'>
           <input type='number' [(ngModel)]='scores[p].scores[i]'>
         </td>
-        <td></td>
-        <td></td>
+        <td>{{ getIn(scores[p].scores) }}</td>
+        <td>{{ getOut(scores[p].scores) }}</td>
         <td>{{ getTotal(scores[p].scores) }}</td>
       </tr>
 

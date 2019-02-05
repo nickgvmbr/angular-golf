@@ -49,17 +49,17 @@ export class GameComponent implements OnInit {
   }
 
   getIn(arr: number[]) {
-    if (arr.length > 0)
-      return arr.slice(0, 9).reduce((acc, i) => acc + i);
-    else
-      return 0;
+    let acc = 0;
+    for (let i = 0; i < 9; i++)
+      if (arr[i]) acc += arr[i];
+    return acc;
   }
 
   getOut(arr: number[]) {
-    if (arr.length > 0)
-      return arr.slice(9).reduce((acc, i) => acc + i);
-    else
-      return 0;
+    let acc = 0;
+    for (let i = 9; i < 18; i++)
+      if (arr[i]) acc += arr[i];
+    return acc;
   }
 
   // model
