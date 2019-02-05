@@ -94,7 +94,12 @@ export class GameComponent implements OnInit {
   
   check() {
     for (let i = 0; i < this.game.players; i++) {
-      if (this.scores[i].scores.length === 18 && this.scores[i].snack === false) {
+
+      let complete = true;
+      for (let j = 0; j < this.scores[i].scores.length; j++)
+        if (this.scores[i].scores[j] === undefined) complete = false;
+
+      if (this.scores[i].scores.length === 18 && complete && this.scores[i].snack === false) {
 
         let score = this.getTotal(this.scores[i].scores) - this.parTotal$;
         this.snackBar.open(
