@@ -113,8 +113,4 @@ export class GameComponent implements OnInit {
   
   }
 
-  log() {
-    console.log(this.scores);
-  }
-
 }
