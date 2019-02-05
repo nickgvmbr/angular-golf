@@ -48,7 +48,7 @@
         </th>
 
         <td *ngFor='let h of holes$; index as i'>
-          <input type='number' [(ngModel)]='scores[p].scores[i]'>
+          <input type='number' [(ngModel)]='scores[p].scores[i]' (change)='check()'>
         </td>
         <td>{{ getIn(scores[p].scores) }}</td>
         <td>{{ getOut(scores[p].scores) }}</td>

@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { NewGameComponent } from './components/new-game/new-game.component';
 import { GameComponent } from './components/game/game.component';
 
-import { MatFormFieldModule, MatSelectModule, MatButtonModule } from '@angular/material';
+import { MatFormFieldModule, MatSelectModule, MatButtonModule, MatSnackBarModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,8 @@ import { MatFormFieldModule, MatSelectModule, MatButtonModule } from '@angular/m
     FormsModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
+import { MatSnackBar } from '@angular/material';
 
 import { NewGame } from '../new-game/new-game';
 
@@ -9,7 +10,10 @@ import { NewGame } from '../new-game/new-game';
   styleUrls: ['./game.component.scss']
 })
 export class GameComponent implements OnInit {
-  constructor(public apiService: ApiService) { }
+  constructor(
+    public apiService: ApiService,
+    private snackBar: MatSnackBar
+  ) { }
 
   // get holes & totals
 
@@ -67,21 +71,41 @@ export class GameComponent implements OnInit {
   scores = [
     {
       name: 'Player 1',
-      scores: []
+      scores: [],
+      snack: false
     },
     {
       name: 'Player 2',
-      scores: []
+      scores: [],
+      snack: false
     },
     {
       name: 'Player 3',
-      scores: []
+      scores: [],
+      snack: false
     },
     {
       name: 'Player 4',
-      scores: []
+      scores: [],
+      snack: false
     },
   ];
+  
+  check() {
+    for (let i = 0; i < this.game.players; i++) {
+      if (this.scores[i].scores.length === 18 && this.scores[i].snack === false) {
+
+        let score = this.getTotal(this.scores[i].scores) - this.parTotal$;
+        this.snackBar.open(
+          `Hey ${this.scores[i].name}, you got a ${score > 0 ? '+' : ''}${score}. ${score <= 0 ? 'You\'re a pro!' : 'Another round?'}`, 'Dismiss', {
+          duration: 4000,
+        });
+        this.scores[i].snack = true;
+
+      }
+    }
+  
+  }
 
   log() {
     console.log(this.scores);
