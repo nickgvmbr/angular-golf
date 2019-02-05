@@ -9,14 +9,16 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NewGameComponent } from './components/new-game/new-game.component';
 import { GameComponent } from './components/game/game.component';
+import { FabComponent } from './components/game/fab/fab.component';
 
-import { MatFormFieldModule, MatSelectModule, MatButtonModule, MatSnackBarModule } from '@angular/material';
+import { MatFormFieldModule, MatSelectModule, MatButtonModule, MatSnackBarModule, MatIconModule, MatTooltipModule } from '@angular/material';
 
 @NgModule({
   declarations: [
     AppComponent,
     NewGameComponent,
-    GameComponent
+    GameComponent,
+    FabComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,9 @@ import { MatFormFieldModule, MatSelectModule, MatButtonModule, MatSnackBarModule
     MatFormFieldModule,
     MatSelectModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatIconModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
