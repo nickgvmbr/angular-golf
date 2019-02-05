@@ -7,7 +7,7 @@ import { NewGameComponent } from './components/new-game/new-game.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'game',
+    redirectTo: 'new-game',
     pathMatch: 'full'
   },
   {
