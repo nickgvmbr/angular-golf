@@ -3,6 +3,7 @@ import { ApiService } from 'src/app/services/api.service';
 import { MatSnackBar } from '@angular/material';
 
 import { NewGame } from '../new-game/new-game';
+import { Scores } from './scores';
 
 @Component({
   selector: 'app-game',
@@ -68,7 +69,7 @@ export class GameComponent implements OnInit {
 
   // model
 
-  scores = [
+  scores: Scores[] = [
     {
       name: 'Player 1',
       scores: [],
