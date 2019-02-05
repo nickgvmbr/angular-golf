@@ -11,7 +11,14 @@ import { NewGameComponent } from './components/new-game/new-game.component';
 import { GameComponent } from './components/game/game.component';
 import { FabComponent } from './components/game/fab/fab.component';
 
-import { MatFormFieldModule, MatSelectModule, MatButtonModule, MatSnackBarModule, MatIconModule, MatTooltipModule } from '@angular/material';
+import {
+  MatFormFieldModule,
+  MatSelectModule,
+  MatButtonModule,
+  MatSnackBarModule,
+  MatIconModule,
+  MatTooltipModule
+} from '@angular/material';
 
 @NgModule({
   declarations: [
